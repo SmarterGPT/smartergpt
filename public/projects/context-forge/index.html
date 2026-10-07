@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>ContextForge - Context Linking and Explanations | SmarterGPT.dev</title>
-	<meta name="description" content="ContextForge is a proposed pure library for linking resolved policy and separately typed context into deterministic, explainable bundles. Architecture proposal; not released." />
+	<meta name="description" content="ContextForge links resolved policy and typed context into deterministic, explainable bundles. Ownership ratified; first local implementation tested, private and unpublished." />
 	<meta name="color-scheme" content="dark light" />
 	<link rel="stylesheet" href="../../assets/styles.css" />
 </head>
@@ -23,17 +23,17 @@
 	<main class="container">
 		<section class="hero">
 			<div class="hero-left">
-				<span class="badge">Architecture proposal • Ratification pending • Not released</span>
+				<span class="badge">Ownership ratified • Local implementation 0.1.0 • Unpublished</span>
 				<h1>ContextForge links context and explains what belongs.</h1>
-				<p class="tagline">Agents need policy, facts, memory, behavior and a mission together without losing the boundaries between them. ContextForge is the proposed library that assembles those explicit inputs into a deterministic context bundle.</p>
-				<p class="tagline" style="margin-top:12px">Each inclusion and omission would have an explanation: where the item came from, which dependency required it, and whether a size budget affected it.</p>
+				<p class="tagline">Agents need policy, facts, memory, behavior and a mission together without losing the boundaries between them. ContextForge assembles those explicit inputs into a deterministic context bundle.</p>
+				<p class="tagline" style="margin-top:12px">The first local implementation explains each inclusion and omission: which dependency required an item and whether a size budget affected it. Its tests use explicit synthetic inputs; live domain adapters remain future work.</p>
 				<div class="cta">
-					<a class="button primary" href="https://github.com/SmarterGPT/lex/issues/837">Follow the ownership proposal</a>
+					<a class="button primary" href="https://github.com/SmarterGPT/lex/issues/837">Decision and implementation evidence</a>
 					<a class="button" href="../../stack.html">Stack context</a>
 				</div>
 			</div>
 			<div class="hero-card hero-right">
-				<div class="kicker">Proposed flow</div>
+				<div class="kicker">Pure linking flow</div>
 				<pre class="code"><code>Resolved Lex policy + typed context inputs
                     |
                     v
@@ -47,17 +47,17 @@
 		</section>
 		<section class="hr" role="separator"></section>
 		<section aria-labelledby="responsibility">
-			<h2 id="responsibility" class="kicker">One proposed responsibility</h2>
+			<h2 id="responsibility" class="kicker">One responsibility</h2>
 			<div class="grid">
-				<article class="card"><h3>Preserve the input boundaries</h3><p>Lex resolves policy. Domain owners supply facts, behavior, memory, identity, mission and capability requirements. ContextForge would link those values without redefining their meaning.</p></article>
+				<article class="card"><h3>Preserve the input boundaries</h3><p>Lex resolves policy. Domain owners supply facts, behavior, memory, identity, mission and capability requirements. ContextForge links explicit values without redefining their meaning.</p></article>
 				<article class="card"><h3>Keep required context together</h3><p>Required dependencies come before relevance scoring or size reduction. Missing mandatory inputs remain visible and block readiness; optional material can be minimized.</p></article>
-				<article class="card"><h3>Make selection explainable</h3><p>The bundle would record stable explanations for inclusion, exclusion, provenance and minimization. Identical explicit inputs should produce identical output.</p></article>
+				<article class="card"><h3>Make selection explainable</h3><p>The bundle records stable explanations for inclusion, exclusion and budget selection. Determinism is tested across processes on identical explicit inputs.</p></article>
 			</div>
 		</section>
 		<section class="hr" role="separator"></section>
 		<section aria-labelledby="status">
 			<h2 id="status" class="kicker">Current status</h2>
-			<article class="card"><p>ContextForge currently has a local architecture proposal, no executable implementation, no public source repository and no npm release. <a href="https://github.com/SmarterGPT/lex/issues/837">Lex #837</a> must ratify ownership and the exact released input contracts before implementation begins. A later LexRunner consumer is downstream work.</p><p>The proposed core performs no provider calls, storage access, credential handling or effects. It returns context, diagnostics and explanations; its output cannot authorize execution. Generated instructions and prompts belong to future adapters outside the core.</p></article>
+			<article class="card"><p>Ownership and input contracts are ratified in <a href="https://github.com/SmarterGPT/lex/issues/837">Lex #837</a>. The first local implementation, LINK-1B1 version 0.1.0, passed 17 contract tests, type and import checks, and an independent packed-consumer check. The package remains private and unpublished, with no public source repository, live domain adapter or LexRunner consumer.</p><p>The core performs no provider calls, storage access, credential handling or effects. It returns context, diagnostics and explanations; its output cannot authorize execution. Authentication, rich memory text, generated instructions and prompt rendering remain separate future work.</p></article>
 		</section>
 		<section class="hr" role="separator"></section>
 		<section aria-labelledby="authority">
@@ -67,7 +67,7 @@
 	</main>
 	<footer class="container footer">
 		<div>&copy; <span id="year"></span> SmarterGPT.dev · Founded by Joseph Gustavson (Guffawaffle) · <a href="../../licensing.html">Licensing and stewardship</a></div>
-		<div class="pill">Proposed context linker • Explanations • No execution authority</div>
+		<div class="pill">Local context linker • Unpublished • No execution authority</div>
 	</footer>
 	<script src="../../assets/app.js"></script>
 </body>

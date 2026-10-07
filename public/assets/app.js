@@ -126,4 +126,46 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (_) {
     // no-op if fetch or DOM APIs are unavailable
   }
+
+  // Fetch public release tags while keeping the /releases/latest link usable.
+  // The fallback stays visible when GitHub is unavailable or rate-limits a request.
+  try {
+    const nodes = Array.from(document.querySelectorAll('[data-github-repo]'));
+    const repos = [...new Set(nodes.map((node) => node.getAttribute('data-github-repo')).filter(Boolean))];
+
+    repos.forEach(async (repo) => {
+      if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repo)) return;
+      const matchingNodes = nodes.filter((node) => node.getAttribute('data-github-repo') === repo);
+      if (typeof AbortController !== 'function') return;
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 5000);
+
+      try {
+        const response = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
+          headers: { Accept: 'application/vnd.github+json' },
+          signal: controller.signal
+        });
+        if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+        const release = await response.json();
+        if (release.draft || release.prerelease || typeof release.tag_name !== 'string' || !release.tag_name.trim()) {
+          throw new Error('No published release tag');
+        }
+
+        matchingNodes.forEach((node) => {
+          node.textContent = release.tag_name.trim();
+          node.setAttribute('data-state', 'loaded');
+          node.setAttribute('title', `${repo}: latest published release`);
+        });
+      } catch (_) {
+        matchingNodes.forEach((node) => {
+          node.setAttribute('data-state', 'error');
+          node.setAttribute('title', 'Version lookup unavailable; open GitHub for the latest release');
+        });
+      } finally {
+        clearTimeout(timeout);
+      }
+    });
+  } catch (_) {
+    // Keep the static release link when browser APIs are unavailable.
+  }
 });

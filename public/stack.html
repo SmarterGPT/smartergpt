@@ -92,21 +92,21 @@
 				<tbody>
 					<tr>
 						<td><strong>Lex</strong></td>
-						<td>Memory, policy context, recall, instructions, local SQLite, CLI/MCP/API.</td>
-						<td>Public MIT. <span class="npm-version" data-npm-package="@smartergpt/lex">npm latest</span>.</td>
+						<td>Work continuity, bounded context, policy, recall, instructions, SQLite/PostgreSQL, CLI/MCP/API.</td>
+						<td>Public MIT. <span class="npm-version" data-npm-package="@smartergpt/lex">npm 4.4.1</span>.</td>
 						<td><a href="projects/lex/index.html">Project page</a> / <a href="https://github.com/SmarterGPT/lex">GitHub</a></td>
 					</tr>
 					<tr>
 						<td><strong>AXF</strong></td>
 						<td>Workspace-native capability declarations and execution surface.</td>
-						<td>Apache-2.0 source. See each npm version’s license. <span class="npm-version" data-npm-package="@smartergpt/axf">npm latest</span>.</td>
+						<td>Apache-2.0 source. See each npm version’s license. <span class="npm-version" data-npm-package="@smartergpt/axf">npm 2.1.3</span>.</td>
 						<td><a href="projects/axf/index.html">Project page</a> / <a href="https://github.com/SmarterGPT/axf">GitHub</a></td>
 					</tr>
 					<tr>
 						<td><strong>ContextForge</strong></td>
-						<td>Proposed deterministic context linking with inclusion, omission and provenance explanations.</td>
-						<td>Architecture only; ratification pending. No implementation or npm release.</td>
-						<td><a href="projects/context-forge/index.html">Proposal page</a> / <a href="https://github.com/SmarterGPT/lex/issues/837">Ownership decision</a></td>
+						<td>Pure context linking with deterministic inclusion, omission and dependency explanations.</td>
+						<td>Ownership ratified; local implementation 0.1.0 tested. Private and unpublished.</td>
+						<td><a href="projects/context-forge/index.html">Implementation status</a> / <a href="https://github.com/SmarterGPT/lex/issues/837">Ownership decision</a></td>
 					</tr>
 					<tr>
 						<td><strong>LexThority</strong></td>
@@ -122,7 +122,7 @@
 					</tr>
 					<tr>
 						<td><strong>LexRunner</strong></td>
-						<td>Fan-out, gates, merge plans, contained execution, and swarm-style flow.</td>
+						<td>Integration plans, gates, receipts, fanout analysis and assisted Attempt coordination.</td>
 						<td>Open source under Apache-2.0. <span class="npm-version" data-npm-package="@smartergpt/lexrunner">npm 2.4.0</span> is public. Earlier versions retain their terms.</td>
 						<td><a href="projects/lexrunner/index.html">Project page</a> / <a href="https://github.com/SmarterGPT/lexrunner">GitHub</a></td>
 					</tr>
@@ -166,7 +166,7 @@
 			<div class="grid">
 				<article class="card">
 					<h3>Safer agent swarms</h3>
-					<p>LexRunner should be able to spin up contained, worktree-like execution environments where agents can explore in parallel without sharing unsafe state or credentials.</p>
+					<p>LexRunner implements an assisted Attempt lifecycle with explicit workspaces and verification. Extending that into general headless supervision still needs public launch, recovery and fault-injection evidence.</p>
 				</article>
 				<article class="card">
 					<h3>IAM-aware autonomy without IAM reinvention</h3>
