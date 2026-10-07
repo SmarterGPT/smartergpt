@@ -125,7 +125,7 @@ Use relative paths from the current file:
 ### Current project positioning
 
 - LexThority is historical research with no active product commitment, per Joseph's 2026-09-06 direction. Keep its historical page and source links; do not market it as an active product or remove independent authorization requirements.
-- ContextForge is the proposed pure context-linking library tracked in Lex #837. Ownership ratification and implementation remain pending; do not advertise an npm package, public source repository, or execution authority.
+- ContextForge is the pure context-linking library tracked in Lex #837. Ownership and input contracts are ratified, and the first local implementation (LINK-1B1, version 0.1.0) is tested. It remains private and unpublished; live adapters and a LexRunner consumer are future work. Do not advertise a public npm package, public source repository, or execution authority.
 
 ---
 
